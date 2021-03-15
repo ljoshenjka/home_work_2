@@ -1,5 +1,6 @@
 package custom_elements;
 
+import elements.Button;
 import elements.CheckBox;
 import elements.Label;
 import elements.base.ClickableField;
@@ -11,6 +12,7 @@ public class AdListItem extends ClickableField {
     private final Label lblDescription = new Label(this, By.xpath(".//td[3]"));
     private final Label lblPrice = new Label(this, By.xpath(".//td[last()]"));
     public final CheckBox cbxSelect = new CheckBox(this, By.xpath(".//input[@type='checkbox']"));
+    public final Button btnImage = new Button(this, By.className("foto_list"));
 
     public AdListItem(AdList parent, By locator) {
         super(parent, locator);
@@ -22,5 +24,9 @@ public class AdListItem extends ClickableField {
 
     public String getPrice() {
         return lblPrice.getValue();
+    }
+
+    public void click() {
+        btnImage.click();
     }
 }
