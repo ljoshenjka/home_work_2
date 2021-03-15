@@ -3,7 +3,10 @@ package steps;
 import base.BaseStep;
 import io.cucumber.java.ParameterType;
 import io.cucumber.java.en.Given;
-import pages.App;
+import io.cucumber.java.en.Then;
+import org.junit.Assert;
+import pages.HomePage;
+import pages.base.App;
 import transform.RowConverter;
 
 public class CommonSteps extends BaseStep {
@@ -21,5 +24,11 @@ public class CommonSteps extends BaseStep {
     @Given("user opens website")
     public void userOpensALink() {
         App.navigate();
+        checksThatHomePageIsOpened();
+    }
+
+    @Then("checks that Home page is opened")
+    public void checksThatHomePageIsOpened() {
+        Assert.assertTrue("Home page not opened", HomePage.lnkTransport.isDisplayed());
     }
 }

@@ -25,7 +25,6 @@ public class WebDriverUtil {
     }
 
     public static void closeDriverSession() {
-        drivers.get().close();
         drivers.get().quit();
         drivers.set(null);
     }
