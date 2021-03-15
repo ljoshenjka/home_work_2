@@ -18,6 +18,10 @@ public class BaseStep {
         return testsData.get().getOrDefault(key, "no data");
     }
 
+    public static String getStringData(String key) {
+        return getData(key).toString();
+    }
+
     public static void clearData() {
         testsData.get().clear();
     }

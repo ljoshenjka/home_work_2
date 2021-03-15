@@ -1,6 +1,7 @@
 package pages.base;
 
 import constants.GlobalParams;
+import custom_elements.Dialog;
 import elements.Label;
 import elements.Link;
 import org.openqa.selenium.By;
@@ -21,6 +22,8 @@ public class App {
     public static Link lnkHeaderLogo = new Link(By.xpath("//a[./img[@class='page_header_logo']]"));
 
     public static Label lblMemoCount = new Label(By.id("mnu_fav_id"));
+
+    public static Dialog dlgAttention = new Dialog(By.id("alert_dv"));
 
     public static void navigate() {
         WebDriverUtil.getDriver().navigate().to(GlobalParams.APP_URL);

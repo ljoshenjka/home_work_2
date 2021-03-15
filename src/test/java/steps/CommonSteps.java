@@ -2,8 +2,10 @@ package steps;
 
 import base.BaseStep;
 import io.cucumber.java.ParameterType;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.HomePage;
 import pages.base.App;
@@ -30,5 +32,15 @@ public class CommonSteps extends BaseStep {
     @Then("checks that Home page is opened")
     public void checksThatHomePageIsOpened() {
         Assert.assertTrue("Home page not opened", HomePage.lnkTransport.isDisplayed());
+    }
+
+    @When("user confirm dialog")
+    public static void userConfirmDialog() {
+        App.dlgAttention.btnClose.click();
+    }
+
+    @And("user opens 'Memo' page")
+    public void userOpensMemoPage() {
+        App.lnkMemo.click();
     }
 }
